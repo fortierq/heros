@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #1a472a;
+  --color-secondary: #2d5a3f;
+  --color-bg: #0d1f15;
+  --color-accent: #d4a017;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lora', serif;
+  background-color: #0f0f1a;
+  color: #f4e4c1;
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4a01766;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4a017;
+}
+
+/* Prose styling for story text */
+.story-text p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.story-text em {
+  color: #d4a017;
+  font-style: italic;
+}
+
+.story-text strong {
+  color: #ffd700;
+  font-weight: 700;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.4s ease-out forwards;
+}
+
+/* HP bar colors */
+.hp-bar-high {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+.hp-bar-mid {
+  background: linear-gradient(90deg, #eab308, #ca8a04);
+}
+
+.hp-bar-low {
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+}
+
+/* Card hover effects */
+.adventure-card {
+  transition: all 0.3s ease;
+}
+
+.adventure-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Combat log scroll */
+.combat-log {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(212, 160, 23, 0.3) transparent;
+}
+
+/* Notification toast */
+.notification-enter {
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Background patterns */
+.bg-pattern-dots {
+  background-image: radial-gradient(circle, rgba(212, 160, 23, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bg-pattern-grid {
+  background-image:
+    linear-gradient(rgba(212, 160, 23, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 160, 23, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}

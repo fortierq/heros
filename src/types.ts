@@ -4,6 +4,8 @@ export interface CharacterStats {
   level: number;
   hp: number;
   maxHp: number;
+  mana: number;
+  maxMana: number;
   attack: number;
   defense: number;
   magic: number;
@@ -17,7 +19,8 @@ export interface Item {
   name: string;
   description: string;
   icon: string;
-  type: 'weapon' | 'armor' | 'potion' | 'spell' | 'key' | 'quest' | 'ring';
+  type: "weapon" | "armor" | "potion" | "spell" | "key" | "quest" | "ring";
+  damage?: number;
   effects?: GameEffect[];
   usable?: boolean;
 }
@@ -34,8 +37,16 @@ export interface Spell {
 }
 
 export interface GameEffect {
-  type: 'heal' | 'damage' | 'stat_boost' | 'add_item' | 'remove_item' | 'add_spell' | 'add_xp' | 'set_flag';
-  target?: 'hp' | 'attack' | 'defense' | 'magic' | 'luck' | 'maxHp';
+  type:
+    | "heal"
+    | "damage"
+    | "stat_boost"
+    | "add_item"
+    | "remove_item"
+    | "add_spell"
+    | "add_xp"
+    | "set_flag";
+  target?: "hp" | "attack" | "defense" | "magic" | "luck" | "maxHp";
   value?: number;
   itemId?: string;
   spellId?: string;
@@ -43,7 +54,13 @@ export interface GameEffect {
 }
 
 export interface Condition {
-  type: 'has_item' | 'has_spell' | 'min_stat' | 'has_flag' | 'min_level' | 'luck_check';
+  type:
+    | "has_item"
+    | "has_spell"
+    | "min_stat"
+    | "has_flag"
+    | "min_level"
+    | "luck_check";
   itemId?: string;
   spellId?: string;
   stat?: keyof CharacterStats;
@@ -57,10 +74,19 @@ export interface CombatEncounter {
   enemyHp: number;
   enemyAttack: number;
   enemyDefense: number;
+  enemySpells?: EnemySpell[];
   victoryScene: string;
   defeatScene: string;
   xpReward: number;
   lootItems?: Item[];
+}
+
+export interface EnemySpell {
+  name: string;
+  icon: string;
+  damage?: number;
+  healing?: number;
+  chance: number; // 0-1 probability of casting instead of normal attack
 }
 
 export interface Choice {
@@ -81,7 +107,7 @@ export interface Scene {
   effects?: GameEffect[];
   combat?: CombatEncounter;
   isEnding?: boolean;
-  endingType?: 'victory' | 'defeat' | 'neutral';
+  endingType?: "victory" | "defeat" | "neutral";
 }
 
 export interface Adventure {
@@ -90,7 +116,7 @@ export interface Adventure {
   subtitle: string;
   description: string;
   coverImage: string;
-  theme: 'fantasy' | 'scifi' | 'horror' | 'mythologie';
+  theme: "fantasy" | "scifi" | "horror" | "mythologie";
   themeColors: {
     primary: string;
     secondary: string;
@@ -111,6 +137,8 @@ export interface GameState {
   currentScene: Scene | null;
   stats: CharacterStats;
   inventory: Item[];
+  equippedWeapon: Item | null;
+  equippedArmor: Item | null;
   spells: Spell[];
   flags: Set<string>;
   history: string[];

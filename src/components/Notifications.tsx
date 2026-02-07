@@ -1,12 +1,12 @@
-import { useGameStore } from '@/store/gameStore';
-import { useEffect } from 'react';
+import { useGameStore } from "@/store/gameStore";
+import { useEffect } from "react";
 
 export default function Notifications() {
   const { notifications, clearNotifications } = useGameStore();
 
   useEffect(() => {
     if (notifications.length > 0) {
-      const timer = setTimeout(() => clearNotifications(), 3000);
+      const timer = setTimeout(() => clearNotifications(), 6000);
       return () => clearTimeout(timer);
     }
   }, [notifications, clearNotifications]);

@@ -308,7 +308,7 @@ export const foretSombre: Adventure = {
       title: "Les Profondeurs du Puits",
       text: `Vous descendez prudemment en utilisant les pierres comme prises. L'obscurité vous engloutit.Au fond, un tunnel creusé à même la roche mène à une grotte souterraine éclairée par des cristaux.\n\nDevant vous, un coffre ancien est gardé par une araignée géante, ses huit yeux rougeoyants fixés sur vous !`,
       image:
-        "https://images.unsplash.com/photo-1504700610630-ac6aba3536d3?w=800&h=400&fit=crop",
+        "https://lh3.googleusercontent.com/gg-dl/AOI_d_8dm7g6ddvCDk86DPf5HRlCZQq_6lq6rBfUocwJpkRge6Ot3ePXSJ67t06HMkHhc4riCV9ZAVnwnnqa2CDsN85dhVK4BcwEsB1x_g_j7e5WFaDXmwak__EL47RWOnzeTYgWqJ4naRQ7FUYeaORHTAlSQRFjaKo9_kUjooi_L0PX6RlzZg=s1024-rj",
       imageAlt: "Grotte souterraine avec des cristaux",
       combat: {
         enemyName: "Araignée Géante",
@@ -331,7 +331,7 @@ export const foretSombre: Adventure = {
       title: "Victoire sur l'Araignée",
       text: `L'araignée géante s'effondre dans un nuage de poussière. Vous ouvrez le coffre ancien et découvrez une magnifique **Épée de Flamme** dont la lame danse de reflets orangés !\n\nVotre puissance augmente considérablement. Un passage secret s'ouvre dans le mur de la grotte, menant vers la surface.`,
       image:
-        "https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&h=400&fit=crop",
+        "https://lh3.googleusercontent.com/gg-dl/AOI_d__j_xq-nxIN0tlOma0G3m584IJtqq35icCe-pON2KUqbYXjKjDGhJxRnDVTPQzKd3gBDDsApH9SbNLRg1hULwsQLRrwMWvsvPO6JPWJpSPKvYCPmWhN8eFeAuQ3j1FbkEgbUJRYtS1xb_MfNf2u4qX1MjMaat7Prguc-b3ZEi6AEcUpXw=s1024-rj",
       imageAlt: "Coffre au trésor ouvert",
       effects: [
         { type: "add_item", itemId: "epee_flamme" },
@@ -355,7 +355,7 @@ export const foretSombre: Adventure = {
       title: "Un Allié Inattendu",
       text: `Vous utilisez un morceau de votre cape pour bander les blessures du gobelin. Ses yeux s'ouvrent lentement.\n\n*"Merci, humain... Je suis Grik. Le chevalier noir a détruit mon village. Mais j'ai vu quelque chose : il cache un bouclier magique dans les ruines au nord. Ce bouclier pourrait vous protéger contre ses attaques."*\n\nGrik vous tend un plan rudimentaire griffonné sur de l'écorce.\n\n*"Et prenez ça..."* Il sort une potion d'un vert lumineux de sa sacoche.`,
       image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=400&fit=crop",
+        "https://lh3.googleusercontent.com/gg-dl/AOI_d_8zSCfYtXiB7jfHl8sKMB5R_ElAegT7x03njZ1qZNj475n-RIYC_6W7eGodvBH-q9riUEb9QgCkAAzyR4hTjkPuW7B66Cs919bdzkZcYWcJROtsf5wY6m4AGwIeO6SyTUTtRHid5Fa5b5Zc0eLFz79IiZXaBFvdGRoRmFpAYfHPQKjsPw=s1024-rj",
       imageAlt: "Créature blessée dans la forêt",
       effects: [
         { type: "add_item", itemId: "potion_soin" },
@@ -380,7 +380,7 @@ export const foretSombre: Adventure = {
       title: "Course dans les Ténèbres",
       text: `Vous courez à perdre haleine entre les arbres. Derrière vous, une silhouette d'ombre sans forme définie glisse silencieusement, gagnant du terrain.\n\nVotre cœur bat à tout rompre. Soudain, vous apercevez un pont de corde au-dessus d'un ravin. De l'autre côté : les ruines d'un ancien temple.`,
       image:
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop",
+        "https://lh3.googleusercontent.com/gg-dl/AOI_d_8i6s28tfoQir842Gu9D3dx6M72Pct6Ygg1I_JLAKlRBacZdN90Pmn1vDQIPv6tsrgjXpw2-882ntOTPjpucEsAfIs4YfCoO0MjQ-l12ZR9OdvfFFHeh4dBkoF-xR25M8-NKkBWeEe7ocS0u1y9HiwbG018qABaJ8YKqGV38c6eBuam-A=s1024-rj",
       imageAlt: "Pont de corde au-dessus d'un ravin",
       effects: [{ type: "damage", value: 15 }],
       choices: [
@@ -400,7 +400,7 @@ export const foretSombre: Adventure = {
       title: "L'Ombre Attaque !",
       text: `L'Ombre se matérialise devant vous — une silhouette humanoïde faite de ténèbres pures, avec des yeux qui brillent comme des braises.\n\nL'air se glace autour de vous. C'est le moment de se battre !`,
       image:
-        "https://images.unsplash.com/photo-1509248961620-e3e73c5f3840?w=800&h=400&fit=crop",
+        "https://lh3.googleusercontent.com/gg-dl/AOI_d__ECB3HUAcvbrO8cddu9G69_E3IpvE0z7ehIXPWyG1F91aZ2q_Lp9aOc4oFAf23sxps0XLLq6WZeESXTebtw2RzpuWyi33ENKhEt9K8cWdMAr0s2mx4Um67nCFCkflSyGPQI-0p29jWYv7w2Xc7qEugw-ha7CJi4HghZf28t-pqjiB2TQ=s1024-rj",
       imageAlt: "Créature d'ombre menaçante",
       combat: {
         enemyName: "Ombre Errante",
@@ -424,7 +424,7 @@ export const foretSombre: Adventure = {
       title: "L'Ombre Dissipée",
       text: `L'Ombre se disloque en filaments de fumée noire qui se dispersent dans la brise. À l'endroit où elle se tenait, un fragment de cristal noir pulse faiblement.\n\nVous sentez que cette énergie pourrait être canaliser. Votre puissance magique augmente et vous apprenez le sort **Éclair** !`,
       image:
-        "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&h=400&fit=crop",
+        "https://lh3.googleusercontent.com/gg-dl/AOI_d__ECB3HUAcvbrO8cddu9G69_E3IpvE0z7ehIXPWyG1F91aZ2q_Lp9aOc4oFAf23sxps0XLLq6WZeESXTebtw2RzpuWyi33ENKhEt9K8cWdMAr0s2mx4Um67nCFCkflSyGPQI-0p29jWYv7w2Xc7qEugw-ha7CJi4HghZf28t-pqjiB2TQ=s1024-rj",
       imageAlt: "Lumière perçant les ténèbres",
       effects: [
         { type: "add_spell", spellId: "eclair" },
@@ -448,7 +448,7 @@ export const foretSombre: Adventure = {
       title: "Les Ruines du Temple Oublié",
       text: `Les ruines d'un temple ancien se dressent devant vous, envahies par la végétation. Des colonnes brisées encadrent une entrée béante d'où émane une lumière dorée.\n\nÀ l'intérieur, vous découvrez une salle circulaire avec un autel au centre. Sur l'autel, un **Bouclier Ancien** orné de runes protectrices repose, attendant un digne porteur.\n\nUne inscription sur l'autel dit : *"Que celui qui porte ce bouclier soit protégé contre les ténèbres."*`,
       image:
-        "https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=800&h=400&fit=crop",
+        "https://lh3.googleusercontent.com/gg-dl/AOI_d_9-cZk1qnAQu8DmYRE1aQlwg6vswBe6i1iMQlZSYXSW1vfWkej-gV4DPjqbk6_G_p0fUqXXFo52CvB3TReN9wIrKdxAy0f1bp_pF4nGaDotscRJ8TtuNSeOHL37UN4thylpbkUNCabr6CqU80wzTP3gfNOUND4uy_45FJLfiHqmazIj=s1024-rj",
       imageAlt: "Ruines d'un temple ancien",
       effects: [
         { type: "add_item", itemId: "bouclier_ancien" },

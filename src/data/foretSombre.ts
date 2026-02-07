@@ -185,7 +185,7 @@ export const foretSombre: Adventure = {
       image:
         "https://chatgpt.com/backend-api/estuary/public_content/enc/eyJpZCI6Im1fNjk4NzhiMjhjOWEwODE5MWEyOWU5M2JiYWU5YWQyMmI6ZmlsZV8wMDAwMDAwMGRiYzQ3MjQ2YmU1ZGIxNWQzNmE1ZjA2MiIsInRzIjoiMjA0OTEiLCJwIjoicHlpIiwiY2lkIjoiMSIsInNpZyI6IjdjM2JjOTAxZTQ0NDYxM2FhZTgzNzU2OTdkZTQ1OWMzMWM4MDc2OWM4Nzk5MGIzOWMwZmRhNDY0MDY1YzMzZWMiLCJ2IjoiMCIsImdpem1vX2lkIjpudWxsLCJjcyI6bnVsbCwiY3AiOm51bGwsIm1hIjpudWxsfQ==?w=800&h=400&fit=crop",
       imageAlt: "Clairière mystique éclairée par la lune",
-      effects: [{ type: "add_xp∏", value: 15 }],
+      effects: [{ type: "add_xp", value: 15 }],
       choices: [
         {
           text: "🕳️ Descendre dans le puits",

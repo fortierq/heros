@@ -1,4 +1,4 @@
-import { useGameStore } from '@/store/gameStore';
+import { useGameStore } from "@/store/gameStore";
 
 export default function StoryPanel() {
   const { currentScene } = useGameStore();
@@ -6,14 +6,14 @@ export default function StoryPanel() {
 
   // Convert markdown-like text to JSX
   const renderText = (text: string) => {
-    const paragraphs = text.split('\n\n');
+    const paragraphs = text.split("\n\n");
     return paragraphs.map((p, idx) => {
       // Process bold
-      let processed = p.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      let processed = p.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
       // Process italic
-      processed = processed.replace(/\*(.+?)\*/g, '<em>$1</em>');
+      processed = processed.replace(/\*(.+?)\*/g, "<em>$1</em>");
       // Handle line breaks within paragraph
-      processed = processed.replace(/\n/g, '<br/>');
+      processed = processed.replace(/\n/g, "<br/>");
 
       return (
         <p
@@ -35,11 +35,18 @@ export default function StoryPanel() {
 
       {/* Scene Image */}
       {currentScene.image && (
-        <div className="relative rounded-xl overflow-hidden animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+        <div
+          className="relative rounded-xl overflow-hidden animate-fade-in-up"
+          style={{ animationDelay: "100ms" }}
+        >
           <img
-            src={currentScene.image}
+            src={
+              currentScene.image.startsWith("http")
+                ? currentScene.image
+                : `${import.meta.env.BASE_URL}${currentScene.image}`
+            }
             alt={currentScene.imageAlt || currentScene.title}
-            className="w-full h-48 md:h-64 object-cover"
+            className="w-full max-h-[28rem] object-cover"
             loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-gray-900/20" />

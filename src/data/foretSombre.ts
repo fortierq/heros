@@ -6,8 +6,7 @@ export const foretSombre: Adventure = {
   subtitle: "Une quête médiévale-fantastique",
   description:
     "Vous êtes un jeune aventurier au seuil de la Forêt des Ombres, un lieu maudit où nul n'est revenu depuis des décennies. On dit qu'un dragon ancien y garde un trésor légendaire... mais aussi que des forces obscures rôdent entre les arbres millénaires.",
-  coverImage:
-    "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&h=500&fit=crop",
+  coverImage: "images/foret/foret-sombre-cover.jpg",
   theme: "fantasy",
   themeColors: {
     primary: "#1a472a",
@@ -159,8 +158,7 @@ export const foretSombre: Adventure = {
       id: "entree_foret",
       title: "L'Orée de la Forêt des Ombres",
       text: `Les derniers rayons du soleil filtrent à travers les branches noueuses tandis que vous contemplez l'entrée de la Forêt des Ombres. L'air est lourd, chargé d'une brume verdâtre qui rampe entre les racines tordues.\n\nUn panneau à moitié rongé par le temps porte une inscription à peine lisible : *"Nul n'entre ici sans y laisser une part de son âme."*\n\nVotre main se crispe sur la poignée de votre épée rouillée. Devant vous, deux sentiers se dessinent dans l'obscurité naissante.`,
-      image:
-        "https://images.unsplash.com/photo-1476231682828-37e571bc172f?w=800&h=400&fit=crop",
+      image: "images/foret/sentier-foret.jpg",
       imageAlt: "Forêt sombre et brumeuse",
       choices: [
         {
@@ -307,8 +305,7 @@ export const foretSombre: Adventure = {
       id: "puits_profondeur",
       title: "Les Profondeurs du Puits",
       text: `Vous descendez prudemment en utilisant les pierres comme prises. L'obscurité vous engloutit.Au fond, un tunnel creusé à même la roche mène à une grotte souterraine éclairée par des cristaux.\n\nDevant vous, un coffre ancien est gardé par une araignée géante, ses huit yeux rougeoyants fixés sur vous !`,
-      image:
-        "https://lh3.googleusercontent.com/gg-dl/AOI_d_8dm7g6ddvCDk86DPf5HRlCZQq_6lq6rBfUocwJpkRge6Ot3ePXSJ67t06HMkHhc4riCV9ZAVnwnnqa2CDsN85dhVK4BcwEsB1x_g_j7e5WFaDXmwak__EL47RWOnzeTYgWqJ4naRQ7FUYeaORHTAlSQRFjaKo9_kUjooi_L0PX6RlzZg=s1024-rj",
+      image: "images/foret/puits_profondeur.jpg",
       imageAlt: "Grotte souterraine avec des cristaux",
       combat: {
         enemyName: "Araignée Géante",
@@ -330,8 +327,7 @@ export const foretSombre: Adventure = {
       id: "victoire_araignee",
       title: "Victoire sur l'Araignée",
       text: `L'araignée géante s'effondre dans un nuage de poussière. Vous ouvrez le coffre ancien et découvrez une magnifique **Épée de Flamme** dont la lame danse de reflets orangés !\n\nVotre puissance augmente considérablement. Un passage secret s'ouvre dans le mur de la grotte, menant vers la surface.`,
-      image:
-        "https://lh3.googleusercontent.com/gg-dl/AOI_d__j_xq-nxIN0tlOma0G3m584IJtqq35icCe-pON2KUqbYXjKjDGhJxRnDVTPQzKd3gBDDsApH9SbNLRg1hULwsQLRrwMWvsvPO6JPWJpSPKvYCPmWhN8eFeAuQ3j1FbkEgbUJRYtS1xb_MfNf2u4qX1MjMaat7Prguc-b3ZEi6AEcUpXw=s1024-rj",
+      image: "images/foret/victoire_araignee.jpg",
       imageAlt: "Coffre au trésor ouvert",
       effects: [
         { type: "add_item", itemId: "epee_flamme" },
@@ -354,8 +350,7 @@ export const foretSombre: Adventure = {
       id: "soigner_gobelin",
       title: "Un Allié Inattendu",
       text: `Vous utilisez un morceau de votre cape pour bander les blessures du gobelin. Ses yeux s'ouvrent lentement.\n\n*"Merci, humain... Je suis Grik. Le chevalier noir a détruit mon village. Mais j'ai vu quelque chose : il cache un bouclier magique dans les ruines au nord. Ce bouclier pourrait vous protéger contre ses attaques."*\n\nGrik vous tend un plan rudimentaire griffonné sur de l'écorce.\n\n*"Et prenez ça..."* Il sort une potion d'un vert lumineux de sa sacoche.`,
-      image:
-        "https://lh3.googleusercontent.com/gg-dl/AOI_d_8zSCfYtXiB7jfHl8sKMB5R_ElAegT7x03njZ1qZNj475n-RIYC_6W7eGodvBH-q9riUEb9QgCkAAzyR4hTjkPuW7B66Cs919bdzkZcYWcJROtsf5wY6m4AGwIeO6SyTUTtRHid5Fa5b5Zc0eLFz79IiZXaBFvdGRoRmFpAYfHPQKjsPw=s1024-rj",
+      image: "images/foret/soigner_gobelin.jpg",
       imageAlt: "Créature blessée dans la forêt",
       effects: [
         { type: "add_item", itemId: "potion_soin" },
@@ -379,8 +374,7 @@ export const foretSombre: Adventure = {
       id: "fuite_ombre",
       title: "Course dans les Ténèbres",
       text: `Vous courez à perdre haleine entre les arbres. Derrière vous, une silhouette d'ombre sans forme définie glisse silencieusement, gagnant du terrain.\n\nVotre cœur bat à tout rompre. Soudain, vous apercevez un pont de corde au-dessus d'un ravin. De l'autre côté : les ruines d'un ancien temple.`,
-      image:
-        "https://lh3.googleusercontent.com/gg-dl/AOI_d_8i6s28tfoQir842Gu9D3dx6M72Pct6Ygg1I_JLAKlRBacZdN90Pmn1vDQIPv6tsrgjXpw2-882ntOTPjpucEsAfIs4YfCoO0MjQ-l12ZR9OdvfFFHeh4dBkoF-xR25M8-NKkBWeEe7ocS0u1y9HiwbG018qABaJ8YKqGV38c6eBuam-A=s1024-rj",
+      image: "images/foret/fuite_ombre.jpg",
       imageAlt: "Pont de corde au-dessus d'un ravin",
       effects: [{ type: "damage", value: 15 }],
       choices: [
@@ -399,8 +393,7 @@ export const foretSombre: Adventure = {
       id: "combat_ombre",
       title: "L'Ombre Attaque !",
       text: `L'Ombre se matérialise devant vous — une silhouette humanoïde faite de ténèbres pures, avec des yeux qui brillent comme des braises.\n\nL'air se glace autour de vous. C'est le moment de se battre !`,
-      image:
-        "https://lh3.googleusercontent.com/gg-dl/AOI_d__ECB3HUAcvbrO8cddu9G69_E3IpvE0z7ehIXPWyG1F91aZ2q_Lp9aOc4oFAf23sxps0XLLq6WZeESXTebtw2RzpuWyi33ENKhEt9K8cWdMAr0s2mx4Um67nCFCkflSyGPQI-0p29jWYv7w2Xc7qEugw-ha7CJi4HghZf28t-pqjiB2TQ=s1024-rj",
+      image: "images/foret/combat_ombre.jpg",
       imageAlt: "Créature d'ombre menaçante",
       combat: {
         enemyName: "Ombre Errante",
@@ -423,8 +416,7 @@ export const foretSombre: Adventure = {
       id: "victoire_ombre",
       title: "L'Ombre Dissipée",
       text: `L'Ombre se disloque en filaments de fumée noire qui se dispersent dans la brise. À l'endroit où elle se tenait, un fragment de cristal noir pulse faiblement.\n\nVous sentez que cette énergie pourrait être canaliser. Votre puissance magique augmente et vous apprenez le sort **Éclair** !`,
-      image:
-        "https://lh3.googleusercontent.com/gg-dl/AOI_d__ECB3HUAcvbrO8cddu9G69_E3IpvE0z7ehIXPWyG1F91aZ2q_Lp9aOc4oFAf23sxps0XLLq6WZeESXTebtw2RzpuWyi33ENKhEt9K8cWdMAr0s2mx4Um67nCFCkflSyGPQI-0p29jWYv7w2Xc7qEugw-ha7CJi4HghZf28t-pqjiB2TQ=s1024-rj",
+      image: "images/foret/combat_ombre.jpg",
       imageAlt: "Lumière perçant les ténèbres",
       effects: [
         { type: "add_spell", spellId: "eclair" },
@@ -447,8 +439,7 @@ export const foretSombre: Adventure = {
       id: "ruines_nord",
       title: "Les Ruines du Temple Oublié",
       text: `Les ruines d'un temple ancien se dressent devant vous, envahies par la végétation. Des colonnes brisées encadrent une entrée béante d'où émane une lumière dorée.\n\nÀ l'intérieur, vous découvrez une salle circulaire avec un autel au centre. Sur l'autel, un **Bouclier Ancien** orné de runes protectrices repose, attendant un digne porteur.\n\nUne inscription sur l'autel dit : *"Que celui qui porte ce bouclier soit protégé contre les ténèbres."*`,
-      image:
-        "https://lh3.googleusercontent.com/gg-dl/AOI_d_9-cZk1qnAQu8DmYRE1aQlwg6vswBe6i1iMQlZSYXSW1vfWkej-gV4DPjqbk6_G_p0fUqXXFo52CvB3TReN9wIrKdxAy0f1bp_pF4nGaDotscRJ8TtuNSeOHL37UN4thylpbkUNCabr6CqU80wzTP3gfNOUND4uy_45FJLfiHqmazIj=s1024-rj",
+      image: "images/foret/ruines_nord.jpg",
       imageAlt: "Ruines d'un temple ancien",
       effects: [
         { type: "add_item", itemId: "bouclier_ancien" },
@@ -471,8 +462,7 @@ export const foretSombre: Adventure = {
       id: "exploration_ruines",
       title: "Les Secrets des Ruines",
       text: `En explorant les salles adjacentes, vous trouvez une bibliothèque souterraine dont les livres sont miraculeusement préservés. L'un d'eux raconte l'histoire du Chevalier Noir :\n\n*"Sir Aldric fut autrefois le plus noble des chevaliers du royaume. Mais la Gemme du Dragon l'a corrompu, transformant son cœur en ténèbres. Seule la destruction de la Gemme peut briser la malédiction."*\n\nVous apprenez le sort de **Guérison** en lisant un grimoire oublié. Dans un coffre caché, vous trouvez également une puissante grande potion de soin.`,
-      image:
-        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&h=400&fit=crop",
+      image: "images/foret/bibliotheque.jpg",
       imageAlt: "Bibliothèque ancienne",
       effects: [
         { type: "add_spell", spellId: "guerison" },
@@ -493,8 +483,7 @@ export const foretSombre: Adventure = {
       id: "approche_donjon",
       title: "L'Approche du Donjon",
       text: `Le Donjon du Chevalier Noir se dresse devant vous comme un poing de pierre noire serré contre le ciel. Des éclairs verdâtres crépitent autour de ses tours.\n\nLa porte principale est verrouillée par un mécanisme ancien. Mais vous remarquez aussi une fenêtre brisée au premier étage, et une entrée de service partiellement cachée par des ronces.`,
-      image:
-        "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&h=400&fit=crop",
+      image: "images/foret/creature-combat.jpg",
       imageAlt: "Donjon sombre et menaçant",
       choices: [
         {
@@ -517,8 +506,7 @@ export const foretSombre: Adventure = {
       id: "entree_principale_donjon",
       title: "Le Hall du Donjon",
       text: `La clé tourne avec un grincement sinistre. Les portes massives s'ouvrent sur un grand hall éclairé par des torches verdâtres. Des armures vides sont alignées le long des murs, comme des sentinelles silencieuses.\n\nAu fond du hall, un escalier en colimaçon monte vers la salle du trône. Vous entendez le cliquetis d'une armure au-dessus de vous.\n\nLe Chevalier Noir vous attend.`,
-      image:
-        "https://images.unsplash.com/photo-1551524559-8af4e6624178?w=800&h=400&fit=crop",
+      image: "images/foret/village-medieval.jpg",
       imageAlt: "Hall de donjon avec des torches",
       effects: [{ type: "add_xp", value: 20 }],
       choices: [
@@ -537,8 +525,7 @@ export const foretSombre: Adventure = {
       id: "fenetre_donjon",
       title: "Infiltration par la Fenêtre",
       text: `L'escalade est périlleuse mais vous parvenez à vous hisser jusqu'à la fenêtre. Vous atterrissez dans ce qui semble être une armurerie abandonnée.\n\nDes armes et armures rouillées couvrent les murs, mais une épée attire votre attention — elle luit d'une lumière intérieure froide.`,
-      image:
-        "https://images.unsplash.com/photo-1553028826-f4804a6dba3b?w=800&h=400&fit=crop",
+      image: "images/foret/labyrinthe-pierre.jpg",
       imageAlt: "Armurerie médiévale",
       effects: [
         { type: "damage", value: 10 },
@@ -556,8 +543,7 @@ export const foretSombre: Adventure = {
       id: "entree_service_donjon",
       title: "Les Cuisines Abandonnées",
       text: `Vous vous faufilez entre les ronces et découvrez les anciennes cuisines du donjon. L'odeur de moisi est étouffante. Des rats s'enfuient devant vos pas.\n\nDans un garde-manger oublié, vous trouvez une potion de soin miraculeusement préservée. Un escalier de service mène vers les étages supérieurs.`,
-      image:
-        "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=800&h=400&fit=crop",
+      image: "images/foret/clairiere-magique.jpg",
       imageAlt: "Cuisines médiévales abandonnées",
       effects: [
         { type: "add_item", itemId: "potion_soin_faible" },
@@ -579,8 +565,7 @@ export const foretSombre: Adventure = {
       id: "fouille_hall",
       title: "Trésors Cachés",
       text: `En fouillant minutieusement, vous découvrez un passage secret derrière une tapisserie déchirée. Il mène à une petite salle au trésor contenant des pièces d'or et... la **Gemme du Dragon** !\n\nLa gemme pulse d'une énergie sombre mais vous sentez que la détruire pourrait être la clé pour vaincre le Chevalier Noir.`,
-      image:
-        "https://images.unsplash.com/photo-1512909006721-3d6018887383?w=800&h=400&fit=crop",
+      image: "images/foret/tour-sombre.jpg",
       imageAlt: "Salle au trésor secrète",
       effects: [
         { type: "add_item", itemId: "gemme_dragon" },
@@ -600,8 +585,7 @@ export const foretSombre: Adventure = {
       id: "salle_trone",
       title: "La Salle du Trône",
       text: `La salle du trône est immense, baignée d'une lumière surnaturelle verte. Sur un trône de fer noir, le **Chevalier Noir** se lève lentement. Son armure d'ébène absorbe la lumière autour de lui.\n\n*"Un autre héros vient chercher la mort,"* gronde-t-il, sa voix résonnant comme un tonnerre lointain. *"Cette forêt m'appartient. Ce royaume m'appartient. Et bientôt, votre âme aussi."*\n\nIl dégaine une épée massive qui crépite d'énergie sombre.`,
-      image:
-        "https://images.unsplash.com/photo-1515879218367-8466d910aede?w=800&h=400&fit=crop",
+      image: "images/foret/combat-sombre.jpg",
       imageAlt: "Salle du trône sombre et imposante",
       choices: [
         {
@@ -630,8 +614,7 @@ export const foretSombre: Adventure = {
       id: "dialogue_chevalier",
       title: "La Vérité de Sir Aldric",
       text: `*"Sir Aldric !"* criez-vous. *"Je connais votre histoire. Vous étiez un noble chevalier avant que la Gemme ne vous corrompe ! Ce n'est pas qui vous êtes vraiment !"*\n\nLe Chevalier Noir vacille. Sa main tremble sur son épée.\n\n*"Ce... ce nom... Comment..."* Des fissures de lumière dorée apparaissent dans son armure noire. *"Aidez-moi... Détruisez la gemme... dans mon armure... libérez-moi de cette prison..."*`,
-      image:
-        "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&h=400&fit=crop",
+      image: "images/foret/foret-profonde.jpg",
       imageAlt: "Lumière perçant à travers les ténèbres",
       effects: [{ type: "add_xp", value: 50 }],
       choices: [
@@ -651,8 +634,7 @@ export const foretSombre: Adventure = {
       id: "combat_chevalier_affaibli",
       title: "Combat : Chevalier Noir (Affaibli)",
       text: `Le Chevalier Noir est déstabilisé ! Son armure crépite et des fissures de lumière apparaissent. C'est votre chance !\n\nMême affaibli, il reste un adversaire redoutable. Préparez-vous !`,
-      image:
-        "https://images.unsplash.com/photo-1515879218367-8466d910aede?w=800&h=400&fit=crop",
+      image: "images/foret/combat-sombre.jpg",
       imageAlt: "Chevalier noir affaibli",
       combat: {
         enemyName: "Chevalier Noir (Affaibli)",
@@ -674,8 +656,7 @@ export const foretSombre: Adventure = {
       id: "combat_chevalier_fort",
       title: "Combat : Chevalier Noir",
       text: `Le Chevalier Noir se jette sur vous avec une puissance dévastatrice ! C'est un combat à la vie, à la mort !\n\n*"Vous êtes courageux, mais la courage ne suffit pas !"*`,
-      image:
-        "https://images.unsplash.com/photo-1515879218367-8466d910aede?w=800&h=400&fit=crop",
+      image: "images/foret/combat-sombre.jpg",
       imageAlt: "Combat épique contre le chevalier noir",
       combat: {
         enemyName: "Chevalier Noir",
@@ -700,8 +681,7 @@ export const foretSombre: Adventure = {
       id: "fin_redemption",
       title: "✨ La Rédemption de Sir Aldric",
       text: `Vous brandissez la Gemme du Dragon et une lumière aveuglante emplit la salle. L'armure noire se fissure, se brise, et tombe en morceaux.\n\nSous l'armure se tient un homme épuisé, aux cheveux blancs et aux yeux emplis de gratitude.\n\n*"Merci... Je suis enfin libre après des siècles de tourment."* Aldric s'agenouille et vous tend la **Couronne du Roi Oublié**.\n\n*"Vous avez prouvé que la compassion est la plus grande des armes. Cette forêt est désormais libérée, et ce royaume a trouvé son héros."*\n\nLa malédiction se dissipe. Les arbres retrouvent leurs couleurs, les oiseaux chantent à nouveau, et la brume s'évapore. Vous êtes le héros de la Forêt des Ombres.\n\n🏆 **FIN DORÉE — La Rédemption** 🏆\n*Vous avez choisi la voie de la compassion et sauvé un homme de sa malédiction.*`,
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop",
+      image: "images/foret/portrait-homme.jpg",
       imageAlt: "Lumière dorée dissipant les ténèbres",
       effects: [
         { type: "add_item", itemId: "couronne_roi" },
@@ -716,8 +696,7 @@ export const foretSombre: Adventure = {
       id: "fin_victoire_combat",
       title: "⚔️ Le Chevalier Noir est Vaincu !",
       text: `Votre dernier coup transperce l'armure maudite. Le Chevalier Noir tombe à genoux, son épée sombre se brisant sur le sol.\n\nL'énergie sombre se dissipe et vous trouvez la **Gemme du Dragon** incrustée dans le trône. En la retirant, le donjon commence à trembler.\n\nVous courez vers la sortie tandis que les murs s'effondrent derrière vous. Dehors, la forêt commence déjà à se transformer — la malédiction se lève !\n\nLes villageois viendront bientôt vous acclamer comme le héros qui a libéré la Forêt des Ombres.\n\n⚔️ **FIN HÉROÏQUE — Le Triomphe par les Armes** ⚔️\n*Vous avez vaincu le mal par la force et le courage.*`,
-      image:
-        "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=400&fit=crop",
+      image: "images/foret/nature-lumiere.jpg",
       imageAlt: "Victoire triomphale au lever du soleil",
       effects: [{ type: "add_xp", value: 150 }],
       isEnding: true,
@@ -729,8 +708,7 @@ export const foretSombre: Adventure = {
       id: "defaite_generique",
       title: "💀 Défaite...",
       text: `Vos forces vous abandonnent. Vous tombez à genoux tandis que les ténèbres vous engloutissent.\n\nLa Forêt des Ombres a réclamé une nouvelle victime. Votre histoire s'achève ici, mais peut-être qu'un autre aventurier prendra la relève un jour...\n\n💀 **FIN — Défaite** 💀\n*Le mal triomphe... pour l'instant.*`,
-      image:
-        "https://images.unsplash.com/photo-1509248961620-e3e73c5f3840?w=800&h=400&fit=crop",
+      image: "images/foret/tenebres.jpg",
       imageAlt: "Ténèbres envahissantes",
       isEnding: true,
       endingType: "defeat",

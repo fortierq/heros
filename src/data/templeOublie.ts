@@ -7,7 +7,7 @@ export const templeOublie: Adventure = {
   description:
     "Grèce antique, époque mythologique. Vous êtes un demi-dieu, enfant d'Athéna, envoyé par l'Oracle de Delphes pour retrouver un artéfact divin caché dans le Temple de l'Éternel — un lieu situé entre le monde des mortels et celui des dieux. Les Titans cherchent aussi cet artéfact pour renverser l'Olympe.",
   coverImage:
-    "https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&h=500&fit=crop",
+    "images/temple/temple-grec.jpg",
   theme: "mythologie",
   themeColors: {
     primary: "#6b4c9a",
@@ -184,7 +184,7 @@ export const templeOublie: Adventure = {
       title: "L'Oracle de Delphes",
       text: `La Pythie se tord sur son trépied, les yeux voilés par la transe divine. Sa voix résonne dans le temple empli de fumée d'encens :\n\n*"Enfant d'Athéna, trois épreuves t'attendent avant le Temple de l'Éternel. La mer, le labyrinthe, et les enfers. Choisis ta première épreuve avec sagesse, car l'ordre déterminera ton destin."*\n\nUn tremblement de terre fait vibrer les colonnes. Au loin, les Titans sont en mouvement. Le temps presse.`,
       image:
-        "https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&h=400&fit=crop",
+        "images/temple/temple-grec.jpg",
       imageAlt: "Temple grec ancien dans la brume",
       choices: [
         {
@@ -208,7 +208,7 @@ export const templeOublie: Adventure = {
       title: "L'Épreuve de la Mer",
       text: `Votre navire fend les flots agités de la mer Égée. Les vagues deviennent de plus en plus hautes, et le ciel s'assombrit.\n\nSoudain, un tourbillon se forme devant vous. Du centre émerge **Scylla**, le monstre à six têtes, tandis que de l'autre côté, **Charybde** crée un vortex dévastateur.\n\nVous devez choisir votre passage.`,
       image:
-        "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=800&h=400&fit=crop",
+        "images/temple/mer-orage.jpg",
       imageAlt: "Mer déchaînée sous un ciel d'orage",
       effects: [{ type: "add_xp", value: 15 }],
       choices: [
@@ -233,7 +233,7 @@ export const templeOublie: Adventure = {
       title: "Face à Scylla",
       text: `Scylla plonge ses têtes vers votre navire ! Vous parvenez à en trancher une avec votre lance, mais les autres vous mordent avant que vous ne passiez.\n\nMeurtri mais vivant, vous atteignez l'Île des Sirènes. Là, dans un temple en ruine, vous trouvez le sort **Vague de Poséidon**, laissé par le dieu des mers lui-même en cadeau aux mortels courageux.`,
       image:
-        "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=800&h=400&fit=crop",
+        "images/temple/mer-orage.jpg",
       imageAlt: "Combat maritime contre un monstre marin",
       effects: [
         { type: "damage", value: 20 },
@@ -263,7 +263,7 @@ export const templeOublie: Adventure = {
       title: "Le Vortex de Charybde",
       text: `Vous foncez droit vers le vortex ! Le navire est secoué violemment mais votre habileté est sans faille — vous passez au travers au moment exact où Charybde reprend son souffle.\n\nDe l'autre côté, vous découvrez une grotte marine contenant le **Bouclier d'Athéna** — l'Égide elle-même, ornée du visage de la Gorgone ! Votre mère divine veillait sur vous.`,
       image:
-        "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=800&h=400&fit=crop",
+        "images/temple/mer-orage.jpg",
       imageAlt: "Navire passant à travers un vortex",
       effects: [
         { type: "add_item", itemId: "bouclier_athena" },
@@ -317,7 +317,7 @@ export const templeOublie: Adventure = {
       title: "Le Labyrinthe du Minotaure",
       text: `L'entrée du labyrinthe de Crète s'ouvre devant vous comme une gueule béante. Les murs de pierre sont couverts de fresques anciennes représentant des sacrifices humains.\n\nUne vieille femme vous attend à l'entrée. C'est **Ariane**, enchantée par les dieux pour guider les héros.\n\n*"Héros, prenez ceci."* Elle vous tend un fil doré. *"Suivez-le pour en sortir. Mais d'abord, vous devrez affronter ce qui vit au centre."*`,
       image:
-        "https://images.unsplash.com/photo-1553028826-f4804a6dba3b?w=800&h=400&fit=crop",
+        "images/temple/labyrinthe.jpg",
       imageAlt: "Entrée d'un labyrinthe de pierre",
       effects: [
         { type: "add_item", itemId: "fil_ariane" },
@@ -340,7 +340,7 @@ export const templeOublie: Adventure = {
       title: "Les Secrets du Labyrinthe",
       text: `En explorant prudemment, vous découvrez les restes d'anciens héros qui n'ont pas eu votre chance. Parmi eux, vous trouvez une **Pomme d'Or** miraculeusement préservée et un grimoire contenant le sort **Flamme d'Héphaistos**.\n\nLe Minotaure rugit au loin. Il a senti votre présence.`,
       image:
-        "https://images.unsplash.com/photo-1553028826-f4804a6dba3b?w=800&h=400&fit=crop",
+        "images/temple/labyrinthe.jpg",
       imageAlt: "Couloirs sombres du labyrinthe",
       effects: [
         { type: "add_item", itemId: "pomme_or" },
@@ -360,7 +360,7 @@ export const templeOublie: Adventure = {
       title: "Le Minotaure !",
       text: `Au centre du labyrinthe, une vaste arène à ciel ouvert. Et là, il attend — le **Minotaure**, mi-homme, mi-taureau, ses cornes tachées du sang de centaines de victimes.\n\nIl gratte le sol de son sabot et charge !`,
       image:
-        "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&h=400&fit=crop",
+        "images/temple/creature-monstre.jpg",
       imageAlt: "Arène du Minotaure",
       combat: {
         enemyName: "Le Minotaure",
@@ -383,7 +383,7 @@ export const templeOublie: Adventure = {
       title: "Le Minotaure est Vaincu !",
       text: `Le Minotaure s'effondre dans un dernier mugissement. Vous suivez le Fil d'Ariane pour sortir du labyrinthe.\n\nÀ la sortie, Ariane est rayonnante : *"Héros, prenez cet Œil de Cyclope. Il vous permettra de voir à travers les illusions du Temple de l'Éternel."*`,
       image:
-        "https://images.unsplash.com/photo-1553028826-f4804a6dba3b?w=800&h=400&fit=crop",
+        "images/temple/labyrinthe.jpg",
       imageAlt: "Victoire dans l'arène",
       effects: [
         { type: "add_item", itemId: "oeil_cyclope" },
@@ -418,7 +418,7 @@ export const templeOublie: Adventure = {
       title: "La Descente aux Enfers",
       text: `L'entrée du royaume d'Hadès est une crevasse béante dans la terre. L'air qui en émane est glacial et sent le soufre.\n\nVous descendez et arrivez aux bords du **Styx**, le fleuve des morts. Charon, le passeur, vous attend dans sa barque.\n\n*"Un vivant parmi les morts ? Intéressant. Que m'offres-tu en échange du passage ?"*`,
       image:
-        "https://images.unsplash.com/photo-1509248961620-e3e73c5f3840?w=800&h=400&fit=crop",
+        "images/temple/enfers.jpg",
       imageAlt: "Entrée des Enfers grecs",
       effects: [{ type: "add_xp", value: 20 }],
       choices: [
@@ -516,7 +516,7 @@ export const templeOublie: Adventure = {
       title: "Le Palais d'Hadès",
       text: `Le palais d'Hadès est grandiose — des colonnes d'obsidienne soutiennent un plafond de flammes vertes. Sur son trône de crânes, Hadès vous observe avec curiosité.\n\n*"Enfant d'Athéna. Ma chère nièce continue d'envoyer ses enfants me déranger."* Un sourire narquois traverse son visage. *"Très bien. Si tu peux vaincre Cerbère, je te donnerai ce que tu cherches — et une épée qui fera trembler même les Titans."*`,
       image:
-        "https://images.unsplash.com/photo-1509248961620-e3e73c5f3840?w=800&h=400&fit=crop",
+        "images/temple/enfers.jpg",
       imageAlt: "Palais sombre et grandiose",
       choices: [
         {
@@ -536,7 +536,7 @@ export const templeOublie: Adventure = {
       title: "Combat : Cerbère !",
       text: `Le gardien des Enfers, le chien à trois têtes, surgit de l'ombre. Ses trois gueules claquent, chacune capable d'avaler un homme entier.\n\nLe combat est engagé !`,
       image:
-        "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&h=400&fit=crop",
+        "images/temple/creature-monstre.jpg",
       imageAlt: "Créature monstrueuse à trois têtes",
       combat: {
         enemyName: "Cerbère",
@@ -615,7 +615,7 @@ export const templeOublie: Adventure = {
       title: "Le Temple de l'Éternel",
       text: `Le Temple se dresse au sommet du Mont Kronos, entre les nuages et les étoiles. Ses colonnes de marbre blanc brillent d'une lumière divine. L'air est chargé d'énergie cosmique.\n\nMais un obstacle se dresse à l'entrée : **Cronos**, le Titan du Temps, père de Zeus, bloque le passage. Son immense silhouette fait trembler la montagne.\n\n*"Mortel insignifiant ! L'artéfact est MIEN ! Avec lui, je renverserai l'Olympe et reprendrai ce qui m'appartient !"*`,
       image:
-        "https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&h=400&fit=crop",
+        "images/temple/temple-grec.jpg",
       imageAlt: "Temple majestueux au sommet d'une montagne",
       choices: [
         {
@@ -664,7 +664,7 @@ export const templeOublie: Adventure = {
       title: "Combat : Cronos (Affaibli)",
       text: `Vous exploitez la faiblesse de Cronos ! Le Titan rugit de douleur alors que vos attaques trouvent leurs cibles.\n\nMême affaibli, il reste un adversaire terrifiant !`,
       image:
-        "https://images.unsplash.com/photo-1515879218367-8466d910aede?w=800&h=400&fit=crop",
+        "images/temple/titan-cosmique.jpg",
       imageAlt: "Titan cosmique affaibli",
       combat: {
         enemyName: "Cronos (Affaibli)",
@@ -693,7 +693,7 @@ export const templeOublie: Adventure = {
       title: "Combat : Cronos",
       text: `Le Titan du Temps s'abat sur vous avec la puissance d'un cataclysme ! Son épée coupe à travers l'espace-temps lui-même !\n\nC'est le combat le plus difficile que vous ayez jamais mené !`,
       image:
-        "https://images.unsplash.com/photo-1515879218367-8466d910aede?w=800&h=400&fit=crop",
+        "images/temple/titan-cosmique.jpg",
       imageAlt: "Titan du Temps en pleine puissance",
       combat: {
         enemyName: "Cronos, Titan du Temps",
@@ -724,7 +724,7 @@ export const templeOublie: Adventure = {
       title: "⚡ Cronos est Vaincu !",
       text: `Cronos tombe à genoux, son essence se dissipant comme du sable dans le vent.\n\n*"Impossible... un mortel..."* murmure-t-il avant de disparaître.\n\nVous entrez dans le Temple de l'Éternel. Au centre, sur un piédestal de lumière, flotte la **Couronne de Laurier Divin** — l'artéfact qui confère l'immortalité.\n\nLes dieux de l'Olympe apparaissent en visions dorées. **Athéna** s'avance, les yeux emplis de fierté.\n\n*"Mon enfant, tu as prouvé ta valeur. L'Olympe est sauvé. Prends la couronne — tu es désormais un héros éternel."*\n\nLe ciel s'illumine et une nouvelle constellation prend forme — la vôtre.\n\n🏛️ **FIN MYTHIQUE — L'Ascension au Panthéon** 🏛️\n*Vous avez vaincu un Titan et gagné votre place parmi les étoiles.*`,
       image:
-        "https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&h=400&fit=crop",
+        "images/temple/temple-grec.jpg",
       imageAlt: "Ascension divine parmi les étoiles",
       effects: [
         { type: "add_item", itemId: "couronne_laurier" },
@@ -740,7 +740,7 @@ export const templeOublie: Adventure = {
       title: "💀 Défaite du Héros",
       text: `Vos forces s'épuisent. Le monde des mortels n'était peut-être pas prêt pour cette quête.\n\nCharon viendra vous chercher pour votre dernier voyage... Mais les Moires filent toujours, et peut-être qu'un autre héros reprendra le flambeau.\n\n💀 **FIN — Défaite** 💀\n*Les dieux pleurent la chute d'un héros prometteur.*`,
       image:
-        "https://images.unsplash.com/photo-1509248961620-e3e73c5f3840?w=800&h=400&fit=crop",
+        "images/temple/enfers.jpg",
       imageAlt: "Ténèbres des Enfers",
       isEnding: true,
       endingType: "defeat",

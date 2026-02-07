@@ -7,7 +7,7 @@ export const odysseeStelaire: Adventure = {
   description:
     "Année 3147. Votre vaisseau, le Némésis, a été endommagé lors d'un saut hyperspatial raté. Vous êtes perdu dans un secteur inconnu de la galaxie, près d'une planète mystérieuse qui émet un signal ancien. Votre mission : survivre, explorer, et percer les secrets de cette région oubliée de l'espace.",
   coverImage:
-    "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&h=500&fit=crop",
+    "images/stellaire/nebuleuse.jpg",
   theme: "scifi",
   themeColors: {
     primary: "#1a1a4e",
@@ -156,7 +156,7 @@ export const odysseeStelaire: Adventure = {
       title: "Réveil en Urgence",
       text: `**ALERTE ! ALERTE ! Systèmes critiques endommagés.**\n\nVous vous réveillez dans le cockpit du Némésis, la tête bourdonnante. À travers le hublot fissuré, une planète bleue et verte tourne lentement — inconnue de toutes vos cartes.\n\nL'IA du vaisseau, ARIA, grésille : *"Capitaine... saut hyperspatial... échec critique... localisation inconnue... réserves d'oxygène à 47%... signal alien détecté sur la planète."*\n\nLes instruments clignotent frénétiquement. Vous devez agir vite.`,
       image:
-        "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&h=400&fit=crop",
+        "images/stellaire/lancement-fusee.jpg",
       imageAlt: "Cockpit de vaisseau spatial endommagé",
       choices: [
         {
@@ -179,7 +179,7 @@ export const odysseeStelaire: Adventure = {
       title: "Le Signal Mystérieux",
       text: `Vous redirigez l'énergie vers les capteurs. Le signal est structuré — ce n'est pas naturel. ARIA décode partiellement le message :\n\n*"... gardiens ... réveil ... épreuve ... digne ... porte des étoiles ..."*\n\nUne carte stellaire holographique se matérialise soudain au-dessus de la console ! Elle montre la planète en contrebas avec trois points d'intérêt marqués.\n\nARIA ajoute : *"Capitaine, ce signal a plus de 10 000 ans."*`,
       image:
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop",
+        "images/stellaire/terre-espace.jpg",
       imageAlt: "Hologramme d'une carte stellaire",
       effects: [
         { type: "add_item", itemId: "carte_stellaire" },
@@ -203,7 +203,7 @@ export const odysseeStelaire: Adventure = {
       title: "Réparation d'ARIA",
       text: `Vous ouvrez le panneau d'accès au processeur central d'ARIA. Les circuits sont endommagés mais réparables. Après une heure de travail minutieux, ARIA redémarre avec une voix plus claire :\n\n*"Merci, Capitaine. Mes diagnostics sont restaurés à 78%. Je détecte maintenant des formes de vie sur la planète — certaines amicales, d'autres... hostiles. Je recommande la prudence."*\n\nARIA active le **Bouclier Énergétique** de vos systèmes défensifs.`,
       image:
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop",
+        "images/stellaire/technologie.jpg",
       imageAlt: "Circuits et technologie",
       effects: [
         { type: "add_spell", spellId: "bouclier_energie" },
@@ -225,7 +225,7 @@ export const odysseeStelaire: Adventure = {
       title: "Atterrissage sur Elysia-7",
       text: `Le Némésis traverse l'atmosphère dans un rugissement de flammes. Vous vous posez dans une vallée luxuriante aux plantes bioluminescentes. Le ciel a deux soleils orangés.\n\nDevant vous s'étend un paysage extraordinaire : une jungle de cristal à l'est, des ruines technologiques au nord, et un lac miroir à l'ouest d'où émane une lumière pulsante.\n\nARIA détecte le signal alien provenant des ruines au nord.`,
       image:
-        "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=800&h=400&fit=crop",
+        "images/stellaire/planete-alien.jpg",
       imageAlt: "Paysage alien luxuriant",
       effects: [{ type: "add_xp", value: 15 }],
       choices: [
@@ -249,7 +249,7 @@ export const odysseeStelaire: Adventure = {
       title: "La Jungle de Cristal",
       text: `Les "arbres" ici sont d'immenses structures cristallines qui chantent quand le vent les traverse. C'est d'une beauté hypnotique.\n\nSoudain, un prédateur alien surgit d'entre les cristaux — une créature biomécanique aux griffes acérées !`,
       image:
-        "https://images.unsplash.com/photo-1534996858221-380b92700493?w=800&h=400&fit=crop",
+        "images/stellaire/foret-alien.jpg",
       imageAlt: "Jungle de cristaux alien",
       combat: {
         enemyName: "Prédateur Cristallin",
@@ -277,7 +277,7 @@ export const odysseeStelaire: Adventure = {
       title: "Victoire sur le Prédateur",
       text: `Le prédateur s'effondre en milliers de fragments cristallins. Parmi les débris, vous récupérez un **Cristal d'Énergie** qui pulse d'une lumière bleue intense.\n\nPlus deep dans la jungle, vous découvrez un arsenal alien abandonné contenant un **Blaster à Plasma** — une arme bien supérieure à votre équipement standard.`,
       image:
-        "https://images.unsplash.com/photo-1534996858221-380b92700493?w=800&h=400&fit=crop",
+        "images/stellaire/foret-alien.jpg",
       imageAlt: "Cristaux et technologie alien",
       effects: [
         { type: "add_item", itemId: "cristal_energie" },
@@ -301,7 +301,7 @@ export const odysseeStelaire: Adventure = {
       title: "Le Lac Miroir",
       text: `Le lac est d'un calme surnaturel — sa surface réfléchit non pas le ciel, mais des images d'un autre temps. Vous voyez une civilisation alien florissante, des vaisseaux immenses, puis... la destruction.\n\nUne entité lumineuse émerge du lac — un être d'énergie pure qui communique par télépathie :\n\n*"Voyageur des étoiles, nous sommes les derniers échos des Architectes. Notre technologie est piégée dans les ruines au nord. Si vous êtes digne, elle vous appartiendra. Nous vous offrons la connaissance du Rayon Ionique."*`,
       image:
-        "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=800&h=400&fit=crop",
+        "images/stellaire/station-spatiale.jpg",
       imageAlt: "Lac miroir reflétant les étoiles",
       effects: [
         { type: "add_spell", spellId: "rayon_ionique" },
@@ -326,7 +326,7 @@ export const odysseeStelaire: Adventure = {
       title: "L'Histoire des Architectes",
       text: `L'entité projette des images dans votre esprit : les Architectes étaient une civilisation qui avait maîtrisé le voyage entre les dimensions. Mais leur plus grande création — la **Porte des Étoiles** — a attiré une entité destructrice d'une autre dimension : le **Dévoreur**.\n\n*"Le Dévoreur sommeille dans les ruines. Si quelqu'un active la Porte sans le vaincre, il s'échappera et consumera cette galaxie. Vous devez trouver le Module IA et l'Artéfact-Clé pour contrôler la Porte en sécurité."*\n\nVous recevez une armure de nanotechnologie alien en cadeau.`,
       image:
-        "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&h=400&fit=crop",
+        "images/stellaire/nebuleuse.jpg",
       imageAlt: "Visions cosmiques des Architectes",
       effects: [
         { type: "add_item", itemId: "armure_nano" },
@@ -348,7 +348,7 @@ export const odysseeStelaire: Adventure = {
       title: "Les Ruines des Architectes",
       text: `Les ruines sont monumentales — des structures métalliques qui défient la gravité, flottant au-dessus du sol. Des écrans holographiques clignotent encore après des millénaires.\n\nAu centre, une immense arche — la **Porte des Étoiles** — pulse d'une énergie contenue. Mais devant elle, un robot sentinelle s'active, ses yeux rouges braqués sur vous.\n\n*"INTRUS DÉTECTÉ. PROTOCOLE DE DÉFENSE ACTIVÉ."*`,
       image:
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop",
+        "images/stellaire/terre-espace.jpg",
       imageAlt: "Ruines de technologie alien avancée",
       choices: [
         {
@@ -373,7 +373,7 @@ export const odysseeStelaire: Adventure = {
       title: "Piratage Réussi !",
       text: `ARIA interface avec les systèmes de la sentinelle. Après quelques secondes tendues, le robot s'immobilise et ses yeux passent au vert.\n\n*"Interface acceptée. Bienvenue, visiteur. Les Archives des Architectes sont accessibles."*\n\nVous apprenez le sort **Piratage Système** et trouvez l'**Artéfact-Clé Alien** dans les archives.`,
       image:
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop",
+        "images/stellaire/technologie.jpg",
       imageAlt: "Piratage informatique alien",
       effects: [
         { type: "add_spell", spellId: "piratage" },
@@ -398,7 +398,7 @@ export const odysseeStelaire: Adventure = {
       title: "Combat : Sentinelle Alien",
       text: `La sentinelle déploie ses armes intégrées — des canons lasers et un bouclier d'énergie. Le combat s'engage !`,
       image:
-        "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop",
+        "images/stellaire/robot.jpg",
       imageAlt: "Robot sentinelle alien",
       combat: {
         enemyName: "Sentinelle des Architectes",
@@ -427,7 +427,7 @@ export const odysseeStelaire: Adventure = {
       title: "Sentinelle Désactivée",
       text: `La sentinelle s'effondre dans une pluie d'étincelles. Dans ses restes, vous récupérez un **Module IA Alien** et l'**Artéfact-Clé**.\n\nLe chemin vers la Porte des Étoiles est libre.`,
       image:
-        "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop",
+        "images/stellaire/robot.jpg",
       imageAlt: "Robot détruit",
       effects: [
         { type: "add_item", itemId: "cle_alien" },
@@ -468,7 +468,7 @@ export const odysseeStelaire: Adventure = {
       title: "Les Archives des Architectes",
       text: `Les archives contiennent la somme du savoir d'une civilisation millénaire. Vous découvrez comment activer la Porte en sécurité — et surtout, comment vaincre le Dévoreur : il faut utiliser le Cristal d'Énergie comme catalyseur pour refermer sa dimension.\n\nVous découvrez aussi un **Médi-Kit Avancé** et des améliorations pour votre équipement.`,
       image:
-        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&h=400&fit=crop",
+        "images/stellaire/bibliotheque.jpg",
       imageAlt: "Archives holographiques alien",
       effects: [
         { type: "add_item", itemId: "medikit_avance" },
@@ -491,7 +491,7 @@ export const odysseeStelaire: Adventure = {
       title: "La Porte des Étoiles",
       text: `Vous insérez l'Artéfact-Clé dans la console centrale. La Porte des Étoiles s'illumine d'une lumière blanche aveuglante, et un vortex se forme en son centre.\n\nMais soudain, l'énergie se teinte de pourpre. Un grondement fait trembler les ruines. Une forme colossale commence à émerger du vortex — le **Dévoreur** s'éveille !\n\nSes tentacules d'énergie sombre s'étendent, détruisant tout sur leur passage.`,
       image:
-        "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&h=400&fit=crop",
+        "images/stellaire/nebuleuse.jpg",
       imageAlt: "Porte des étoiles activée",
       choices: [
         {
@@ -516,7 +516,7 @@ export const odysseeStelaire: Adventure = {
       title: "Combat : Le Dévoreur",
       text: `Le Dévoreur est une masse d'énergie sombre et de tentacules cosmiques. Son rugissement fait vibrer la réalité elle-même !\n\nC'est le combat de votre vie !`,
       image:
-        "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&h=400&fit=crop",
+        "images/stellaire/nebuleuse.jpg",
       imageAlt: "Entité cosmique monstrueuse",
       combat: {
         enemyName: "Le Dévoreur",
@@ -542,7 +542,7 @@ export const odysseeStelaire: Adventure = {
       title: "✨ La Lumière Triomphe",
       text: `Vous brandissez le Cristal d'Énergie face au Dévoreur. Le cristal absorbe l'énergie sombre du vortex et la convertit en lumière pure.\n\nLe Dévoreur hurle — un son qui traverse les dimensions — tandis qu'il est aspiré à nouveau dans la faille. La Porte se stabilise, brillant désormais d'une lumière bleue sereine.\n\nARIA confirme : *"Porte stabilisée. Coordonnées de la Terre verrouillées. Prêt pour le saut, Capitaine."*\n\nVous franchissez la Porte et retrouvez la Voie Lactée. La civilisation des Architectes revivra à travers les données que vous ramenez.\n\n🌟 **FIN ULTIME — Sauveur des Étoiles** 🌟\n*Vous avez vaincu le Dévoreur et ramené le savoir des Architectes à l'humanité.*`,
       image:
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop",
+        "images/stellaire/terre-espace.jpg",
       imageAlt: "Lumière cosmique triomphante",
       effects: [{ type: "add_xp", value: 250 }],
       isEnding: true,
@@ -555,7 +555,7 @@ export const odysseeStelaire: Adventure = {
       title: "🖥️ Le Code Ultime",
       text: `Vous connectez le Module IA à la console de la Porte. ARIA et l'IA alien travaillent ensemble pour reprogrammer le vortex.\n\nLe Dévoreur est repoussé dans sa dimension et la Porte se recalibre. Elle affiche maintenant des coordonnées familières — la Terre !\n\n*"Solution optimale trouvée,"* annonce ARIA. *"La Porte est sécurisée. Le Dévoreur ne pourra plus jamais s'en échapper."*\n\nVous rentrez chez vous en héros, porteur de la technologie qui changera l'avenir de l'humanité.\n\n💻 **FIN SCIENTIFIQUE — Le Programmeur des Étoiles** 💻\n*L'intelligence a triomphé de la force brute.*`,
       image:
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop",
+        "images/stellaire/technologie.jpg",
       imageAlt: "Code alien et technologie",
       effects: [{ type: "add_xp", value: 200 }],
       isEnding: true,
@@ -568,7 +568,7 @@ export const odysseeStelaire: Adventure = {
       title: "⚔️ Le Dévoreur est Vaincu !",
       text: `Après un combat titanesque, le Dévoreur se disloque en fragments d'énergie sombre qui sont aspirés dans le vortex. La Porte se stabilise d'elle-même.\n\nVous êtes épuisé mais victorieux. ARIA localise les coordonnées de la Terre et vous préparez le saut retour.\n\nL'humanité ne saura probablement jamais à quel point elle est passée près de l'extinction. Mais vous, vous savez.\n\n⚔️ **FIN HÉROÏQUE — Le Combattant des Étoiles** ⚔️\n*La force et le courage ont prévalu contre l'impossible.*`,
       image:
-        "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&h=400&fit=crop",
+        "images/stellaire/lancement-fusee.jpg",
       imageAlt: "Victoire spatiale",
       effects: [{ type: "add_xp", value: 180 }],
       isEnding: true,
@@ -581,7 +581,7 @@ export const odysseeStelaire: Adventure = {
       title: "💀 Perdu dans les Étoiles",
       text: `Vos systèmes de survie tombent en panne un par un. Seul dans l'obscurité de l'espace inconnu, votre aventure prend fin.\n\nPeut-être qu'un jour, un autre explorateur trouvera l'épave du Némésis et reprendra votre mission...\n\n💀 **FIN — Défaite** 💀\n*L'espace est vaste et impitoyable.*`,
       image:
-        "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&h=400&fit=crop",
+        "images/stellaire/nebuleuse.jpg",
       imageAlt: "Vaisseau dérivant dans l'espace",
       isEnding: true,
       endingType: "defeat",

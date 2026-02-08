@@ -585,7 +585,7 @@ export const foretSombre: Adventure = {
       id: "salle_trone",
       title: "La Salle du Trône",
       text: `La salle du trône est immense, baignée d'une lumière surnaturelle verte. Sur un trône de fer noir, le **Chevalier Noir** se lève lentement. Son armure d'ébène absorbe la lumière autour de lui.\n\n*"Un autre héros vient chercher la mort,"* gronde-t-il, sa voix résonnant comme un tonnerre lointain. *"Cette forêt m'appartient. Ce royaume m'appartient. Et bientôt, votre âme aussi."*\n\nIl dégaine une épée massive qui crépite d'énergie sombre.`,
-      image: "images/foret/combat-sombre.jpg",
+      image: "images/foret/chevalier_noir.png",
       imageAlt: "Salle du trône sombre et imposante",
       choices: [
         {

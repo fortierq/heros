@@ -681,7 +681,7 @@ export const foretSombre: Adventure = {
       id: "fin_redemption",
       title: "✨ La Rédemption de Sir Aldric",
       text: `Vous brandissez la Gemme du Dragon et une lumière aveuglante emplit la salle. L'armure noire se fissure, se brise, et tombe en morceaux.\n\nSous l'armure se tient un homme épuisé, aux cheveux blancs et aux yeux emplis de gratitude.\n\n*"Merci... Je suis enfin libre après des siècles de tourment."* Aldric s'agenouille et vous tend la **Couronne du Roi Oublié**.\n\n*"Vous avez prouvé que la compassion est la plus grande des armes. Cette forêt est désormais libérée, et ce royaume a trouvé son héros."*\n\nLa malédiction se dissipe. Les arbres retrouvent leurs couleurs, les oiseaux chantent à nouveau, et la brume s'évapore. Vous êtes le héros de la Forêt des Ombres.\n\n🏆 **FIN DORÉE — La Rédemption** 🏆\n*Vous avez choisi la voie de la compassion et sauvé un homme de sa malédiction.*`,
-      image: "images/foret/portrait-homme.jpg",
+      image: "images/foret/redemption.png",
       imageAlt: "Lumière dorée dissipant les ténèbres",
       effects: [
         { type: "add_item", itemId: "couronne_roi" },

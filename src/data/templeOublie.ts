@@ -1,4 +1,4 @@
-import type { Adventure } from "@/types";
+import type { Adventure } from "../types";
 
 export const templeOublie: Adventure = {
   id: "temple-oublie",

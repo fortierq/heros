@@ -1,5 +1,38 @@
 // ─── Types du moteur de jeu ─────────────────────────────────────
 
+// ─── Carte & Événements aléatoires ──────────────────────────────
+
+export interface MapLocation {
+  id: string;
+  name: string;
+  x: number; // position 0-100 (pourcentage)
+  y: number;
+  icon: string;
+  arrivalScene: string;
+  connectedTo: string[];
+  discoveredByDefault?: boolean;
+  description?: string;
+}
+
+export interface RandomEvent {
+  id: string;
+  title: string;
+  text: string;
+  imagePrompt?: string;
+  probability: number; // 0-1
+  condition?: Condition;
+  effects?: GameEffect[];
+  combat?: CombatEncounter;
+  choices?: RandomEventChoice[];
+}
+
+export interface RandomEventChoice {
+  text: string;
+  effects?: GameEffect[];
+}
+
+// ─── Stats & Objets ─────────────────────────────────────────────
+
 export interface CharacterStats {
   level: number;
   hp: number;
@@ -59,6 +92,7 @@ export interface Condition {
     | "has_spell"
     | "min_stat"
     | "has_flag"
+    | "not_has_flag"
     | "min_level"
     | "luck_check";
   itemId?: string;
@@ -103,6 +137,8 @@ export interface Scene {
   text: string;
   image?: string;
   imageAlt?: string;
+  imagePrompt?: string;
+  mapLocation?: string;
   choices: Choice[];
   effects?: GameEffect[];
   combat?: CombatEncounter;
@@ -130,6 +166,8 @@ export interface Adventure {
   allSpells: Record<string, Spell>;
   scenes: Record<string, Scene>;
   startScene: string;
+  mapLocations?: MapLocation[];
+  randomEvents?: RandomEvent[];
 }
 
 export interface GameState {

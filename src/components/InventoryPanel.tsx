@@ -11,6 +11,8 @@ export default function InventoryPanel() {
     equipItem,
     unequipItem,
     isInCombat,
+    newItems,
+    markItemSeen,
   } = useGameStore();
 
   return (
@@ -97,8 +99,12 @@ export default function InventoryPanel() {
             {inventory.map((item, idx) => (
               <div
                 key={`${item.id}-${idx}`}
-                className="flex items-center gap-2 bg-gray-800/50 rounded-lg px-3 py-2 group"
+                onMouseEnter={() => markItemSeen(item.id)}
+                className={`flex items-center gap-2 bg-gray-800/50 rounded-lg px-3 py-2 group relative ${newItems.has(item.id) ? "ring-1 ring-gold shadow-[0_0_8px_rgba(212,160,23,0.3)]" : ""}`}
               >
+                {newItems.has(item.id) && (
+                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-gold rounded-full animate-pulse shadow-sm" />
+                )}
                 <span className="text-lg shrink-0">{item.icon}</span>
                 <div className="flex-1 min-w-0">
                   <p className="text-xs font-semibold text-parchment">

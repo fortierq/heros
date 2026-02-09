@@ -9,6 +9,8 @@ import type {
   Condition,
   CombatState,
   CombatEncounter,
+  RandomEvent,
+  RandomEventChoice,
 } from "@/types";
 
 interface GameStore {
@@ -26,6 +28,18 @@ interface GameStore {
   combatState: CombatState | null;
   gameOver: boolean;
   notifications: string[];
+
+  // Map state
+  discoveredLocations: Set<string>;
+  currentMapLocation: string | null;
+  showMap: boolean;
+
+  // New item highlighting
+  newItems: Set<string>;
+
+  // Random events
+  activeRandomEvent: RandomEvent | null;
+  pendingDestination: string | null;
 
   // Actions
   startAdventure: (adventure: Adventure) => void;
@@ -45,6 +59,15 @@ interface GameStore {
   addNotification: (msg: string) => void;
   clearNotifications: () => void;
   resetGame: () => void;
+
+  // Map actions
+  toggleMap: () => void;
+  travelToLocation: (locationId: string) => void;
+  discoverLocation: (locationId: string) => void;
+  resolveRandomEvent: (choice?: RandomEventChoice) => void;
+
+  // Highlight actions
+  markItemSeen: (itemId: string) => void;
 }
 
 const defaultStats: CharacterStats = {
@@ -75,6 +98,16 @@ export const useGameStore = create<GameStore>((set, get) => ({
   combatState: null,
   gameOver: false,
   notifications: [],
+  newItems: new Set<string>(),
+
+  // Map state
+  discoveredLocations: new Set<string>(),
+  currentMapLocation: null,
+  showMap: false,
+
+  // Random events
+  activeRandomEvent: null,
+  pendingDestination: null,
 
   startAdventure: (adventure: Adventure) => {
     // Auto-equip starting weapon and armor
@@ -100,6 +133,20 @@ export const useGameStore = create<GameStore>((set, get) => ({
       combatState: null,
       gameOver: false,
       notifications: [],
+      // Map initialization
+      discoveredLocations: new Set<string>(
+        (adventure.mapLocations ?? [])
+          .filter((l) => l.discoveredByDefault)
+          .map((l) => l.id),
+      ),
+      currentMapLocation:
+        adventure.mapLocations?.find(
+          (l) => l.arrivalScene === adventure.startScene,
+        )?.id ?? null,
+      showMap: false,
+      activeRandomEvent: null,
+      pendingDestination: null,
+      newItems: new Set<string>(),
     });
 
     // Apply equip effects
@@ -118,22 +165,41 @@ export const useGameStore = create<GameStore>((set, get) => ({
   },
 
   goToScene: (sceneId: string) => {
-    const { currentAdventure, history } = get();
+    const { currentAdventure, history, discoveredLocations } = get();
     if (!currentAdventure) return;
 
     const scene = currentAdventure.scenes[sceneId];
     if (!scene) return;
 
+    // Auto-discover map location if scene has one
+    const newDiscovered = new Set(discoveredLocations);
+    let newMapLocation = get().currentMapLocation;
+    if (scene.mapLocation) {
+      newDiscovered.add(scene.mapLocation);
+      newMapLocation = scene.mapLocation;
+      // Also discover connected locations (you can see them from here)
+      const loc = currentAdventure.mapLocations?.find(
+        (l) => l.id === scene.mapLocation,
+      );
+      if (loc) {
+        for (const connId of loc.connectedTo) {
+          newDiscovered.add(connId);
+        }
+      }
+    }
+
     set({
       currentScene: scene,
       history: [...history, sceneId],
       gameOver: scene.isEnding ?? false,
+      discoveredLocations: newDiscovered,
+      currentMapLocation: newMapLocation,
     });
 
-    // Mana regen on dialogue: recover 5 + magic/2 mana when entering a new scene
+    // Mana regen on dialogue: recover 3 + magic/3 mana when entering a new scene
     if (!scene.combat) {
       const { stats } = get();
-      const manaRegen = Math.floor(5 + stats.magic / 2);
+      const manaRegen = Math.floor(3 + stats.magic / 3);
       const newMana = Math.min(stats.maxMana, stats.mana + manaRegen);
       if (newMana > stats.mana) {
         set({ stats: { ...stats, mana: newMana } });
@@ -173,6 +239,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
     let newSpells = [...spells];
     const newFlags = new Set(flags);
     const notifications: string[] = [];
+    const newItems = new Set(get().newItems);
 
     for (const effect of effects) {
       switch (effect.type) {
@@ -196,9 +263,19 @@ export const useGameStore = create<GameStore>((set, get) => ({
           break;
         case "add_item":
           if (effect.itemId && currentAdventure?.allItems[effect.itemId]) {
-            const item = currentAdventure.allItems[effect.itemId];
-            newInventory.push(item);
-            notifications.push(`Objet obtenu : ${item.name} ${item.icon}`);
+            // Prevent duplicate unique items (weapons, armor, artifacts, quest)
+            const alreadyOwned = newInventory.some(
+              (i) => i.id === effect.itemId,
+            );
+            const isEquipped =
+              get().equippedWeapon?.id === effect.itemId ||
+              get().equippedArmor?.id === effect.itemId;
+            if (!alreadyOwned && !isEquipped) {
+              const item = currentAdventure.allItems[effect.itemId];
+              newInventory.push(item);
+              notifications.push(`Objet obtenu : ${item.name} ${item.icon}`);
+              newItems.add(item.id);
+            }
           }
           break;
         case "remove_item":
@@ -238,6 +315,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
       spells: newSpells,
       flags: newFlags,
       notifications: [...get().notifications, ...notifications],
+      newItems: newItems,
     });
 
     if (newStats.hp <= 0) {
@@ -259,6 +337,8 @@ export const useGameStore = create<GameStore>((set, get) => ({
         return false;
       case "has_flag":
         return condition.flag ? flags.has(condition.flag) : false;
+      case "not_has_flag":
+        return condition.flag ? !flags.has(condition.flag) : true;
       case "min_level":
         return stats.level >= (condition.value ?? 1);
       case "luck_check":
@@ -568,14 +648,14 @@ export const useGameStore = create<GameStore>((set, get) => ({
       ...stats,
       level: stats.level + 1,
       xp: stats.xp - stats.xpToNextLevel,
-      xpToNextLevel: Math.floor(stats.xpToNextLevel * 1.5),
-      maxHp: stats.maxHp + 15,
-      hp: Math.min(stats.hp + 15, stats.maxHp + 15),
-      maxMana: stats.maxMana + 10,
-      mana: Math.min(stats.mana + 10, stats.maxMana + 10),
-      attack: stats.attack + 3,
-      defense: stats.defense + 2,
-      magic: stats.magic + 2,
+      xpToNextLevel: Math.floor(stats.xpToNextLevel * 1.6),
+      maxHp: stats.maxHp + 10,
+      hp: Math.min(stats.hp + 10, stats.maxHp + 10),
+      maxMana: stats.maxMana + 5,
+      mana: Math.min(stats.mana + 5, stats.maxMana + 5),
+      attack: stats.attack + 2,
+      defense: stats.defense + 1,
+      magic: stats.magic + 1,
       luck: stats.luck + 1,
     };
 
@@ -616,6 +696,120 @@ export const useGameStore = create<GameStore>((set, get) => ({
       combatState: null,
       gameOver: false,
       notifications: [],
+      discoveredLocations: new Set<string>(),
+      currentMapLocation: null,
+      showMap: false,
+      activeRandomEvent: null,
+      pendingDestination: null,
+      newItems: new Set<string>(),
     });
+  },
+
+  markItemSeen: (itemId: string) => {
+    const { newItems } = get();
+    if (newItems.has(itemId)) {
+      const updated = new Set(newItems);
+      updated.delete(itemId);
+      set({ newItems: updated });
+    }
+  },
+
+  // ─── Map Actions ──────────────────────────────────────────────
+
+  toggleMap: () => {
+    set({ showMap: !get().showMap });
+  },
+
+  discoverLocation: (locationId: string) => {
+    const { discoveredLocations } = get();
+    const newDiscovered = new Set(discoveredLocations);
+    newDiscovered.add(locationId);
+    set({ discoveredLocations: newDiscovered });
+  },
+
+  travelToLocation: (locationId: string) => {
+    const { currentAdventure, currentMapLocation } = get();
+    if (!currentAdventure?.mapLocations) return;
+
+    const location = currentAdventure.mapLocations.find(
+      (l) => l.id === locationId,
+    );
+    if (!location) return;
+    if (locationId === currentMapLocation) return;
+
+    // Check for random events during travel
+    const events = currentAdventure.randomEvents ?? [];
+    const triggeredEvent = events.find((event) => {
+      if (event.condition && !get().checkCondition(event.condition)) {
+        return false;
+      }
+      return Math.random() < event.probability;
+    });
+
+    if (triggeredEvent) {
+      if (triggeredEvent.combat) {
+        // Combat random event: create a temporary scene
+        const tempCombat = {
+          ...triggeredEvent.combat,
+          victoryScene: location.arrivalScene,
+        };
+        const tempScene: Scene = {
+          id: "__random_combat__",
+          title: triggeredEvent.title,
+          text: triggeredEvent.text,
+          imagePrompt: triggeredEvent.imagePrompt,
+          choices: [],
+          combat: tempCombat,
+          mapLocation: currentMapLocation ?? undefined,
+        };
+
+        set({
+          currentScene: tempScene,
+          showMap: false,
+          pendingDestination: null,
+        });
+
+        if (triggeredEvent.effects) {
+          get().applyEffects(triggeredEvent.effects);
+        }
+
+        get().startCombat(tempCombat);
+        get().addNotification(`⚠️ ${triggeredEvent.title}`);
+      } else {
+        // Non-combat event: show modal
+        set({
+          activeRandomEvent: triggeredEvent,
+          pendingDestination: location.arrivalScene,
+          showMap: false,
+        });
+      }
+    } else {
+      // No event, travel directly
+      set({ showMap: false });
+      get().goToScene(location.arrivalScene);
+    }
+  },
+
+  resolveRandomEvent: (choice?: RandomEventChoice) => {
+    const { activeRandomEvent, pendingDestination } = get();
+    if (!activeRandomEvent) return;
+
+    // Apply event effects
+    if (activeRandomEvent.effects) {
+      get().applyEffects(activeRandomEvent.effects);
+    }
+
+    // Apply choice effects if any
+    if (choice?.effects) {
+      get().applyEffects(choice.effects);
+    }
+
+    set({ activeRandomEvent: null });
+
+    // Continue to destination
+    if (pendingDestination) {
+      set({ pendingDestination: null });
+      get().goToScene(pendingDestination);
+    }
   },
 }));

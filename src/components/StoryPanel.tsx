@@ -1,8 +1,21 @@
 import { useGameStore } from "@/store/gameStore";
+import { getSceneImageUrl } from "@/services/imageService";
+import { useState } from "react";
 
 export default function StoryPanel() {
   const { currentScene } = useGameStore();
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [prevSceneId, setPrevSceneId] = useState<string | null>(null);
+
   if (!currentScene) return null;
+
+  // Reset image loaded state on scene change
+  if (currentScene.id !== prevSceneId) {
+    setPrevSceneId(currentScene.id);
+    setImageLoaded(false);
+  }
+
+  const imageUrl = getSceneImageUrl(currentScene);
 
   // Convert markdown-like text to JSX
   const renderText = (text: string) => {
@@ -27,28 +40,32 @@ export default function StoryPanel() {
   };
 
   return (
-    <div className="space-y-4">
+    <div key={currentScene.id} className="space-y-4 animate-fade-in">
       {/* Scene Title */}
       <h2 className="font-medieval text-2xl md:text-3xl font-bold text-gold animate-fade-in-up">
         {currentScene.title}
       </h2>
 
       {/* Scene Image */}
-      {currentScene.image && (
+      {imageUrl && (
         <div
           className="relative rounded-xl overflow-hidden animate-fade-in-up"
           style={{ animationDelay: "100ms" }}
         >
           <img
             src={
-              currentScene.image.startsWith("http")
-                ? currentScene.image
-                : `${import.meta.env.BASE_URL}${currentScene.image}`
+              imageUrl.startsWith("http")
+                ? imageUrl
+                : `${import.meta.env.BASE_URL}${imageUrl}`
             }
             alt={currentScene.imageAlt || currentScene.title}
-            className="w-full max-h-[28rem] object-cover"
+            className={`w-full max-h-[28rem] object-cover transition-opacity duration-500 ${imageLoaded ? "opacity-100" : "opacity-0"}`}
             loading="lazy"
+            onLoad={() => setImageLoaded(true)}
           />
+          {!imageLoaded && (
+            <div className="absolute inset-0 bg-gray-800 animate-pulse rounded-xl" />
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-gray-900/20" />
         </div>
       )}

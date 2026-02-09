@@ -250,6 +250,13 @@ export const useGameStore = create<GameStore>((set, get) => ({
           );
           notifications.push(`+${effect.value} PV`);
           break;
+        case "heal_mana":
+          newStats.mana = Math.min(
+            newStats.maxMana,
+            newStats.mana + (effect.value ?? 0),
+          );
+          notifications.push(`+${effect.value} Mana`);
+          break;
         case "damage":
           newStats.hp = Math.max(0, newStats.hp - (effect.value ?? 0));
           notifications.push(`-${effect.value} PV`);

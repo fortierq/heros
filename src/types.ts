@@ -52,7 +52,15 @@ export interface Item {
   name: string;
   description: string;
   icon: string;
-  type: "weapon" | "armor" | "potion" | "spell" | "key" | "quest" | "ring";
+  type:
+    | "weapon"
+    | "armor"
+    | "potion"
+    | "spell"
+    | "key"
+    | "quest"
+    | "ring"
+    | "artifact";
   damage?: number;
   effects?: GameEffect[];
   usable?: boolean;
@@ -78,8 +86,16 @@ export interface GameEffect {
     | "remove_item"
     | "add_spell"
     | "add_xp"
-    | "set_flag";
-  target?: "hp" | "attack" | "defense" | "magic" | "luck" | "maxHp";
+    | "set_flag"
+    | "heal_mana";
+  target?:
+    | "hp"
+    | "attack"
+    | "defense"
+    | "magic"
+    | "luck"
+    | "maxHp"
+    | "maxMana";
   value?: number;
   itemId?: string;
   spellId?: string;
@@ -141,6 +157,7 @@ export interface Scene {
   mapLocation?: string;
   choices: Choice[];
   effects?: GameEffect[];
+  condition?: Condition;
   combat?: CombatEncounter;
   isEnding?: boolean;
   endingType?: "victory" | "defeat" | "neutral";

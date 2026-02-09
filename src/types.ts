@@ -88,14 +88,7 @@ export interface GameEffect {
     | "add_xp"
     | "set_flag"
     | "heal_mana";
-  target?:
-    | "hp"
-    | "attack"
-    | "defense"
-    | "magic"
-    | "luck"
-    | "maxHp"
-    | "maxMana";
+  target?: "hp" | "attack" | "defense" | "magic" | "luck" | "maxHp" | "maxMana";
   value?: number;
   itemId?: string;
   spellId?: string;
